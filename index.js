@@ -2,8 +2,8 @@ require('dotenv-safe').config();
 require("express-async-errors");
 const express = require("express");
 const app = express();
-const { createLog } = require("./logger");
 const PORT = process.env.PORT || 3333;
+const { createLog } = require("./logger");
 
 // working route
 app.get("/teste1", (req, res, next) => {
@@ -35,6 +35,6 @@ app.use( async (error, req, res, next) => {
   res.sendStatus(500);
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server is running!");
 });
